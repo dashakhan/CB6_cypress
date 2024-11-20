@@ -1,14 +1,41 @@
-describe('SignUpus Page', () => {
-    const newEmail = `howdyCow_${Date.now()}@gmail.com`
+import * as userData from "./data/userData.js"
+import {confirmEmailMsg} from "./data/userData.js";
 
-        it('SignUpus Page', () => {
+describe('SIGN UP', () => {
+    beforeEach(() => {
         cy.visit('/');
-        cy.get(`[name="companyName"]`).should('be.visible').type('HowdyINC')
-        cy.get(`[name="firstName"]`).should('be.visible').type('Daria')
-        cy.get(`[name="lastName"]`).should('be.visible').type('Khan')
-        cy.get(`[name="email"]`).should('be.visible').type(newEmail)
-        cy.get(`[name="password"]`).should('be.visible').type('333Test!')
-        cy.get(`[type="submit"]`).should('be.visible').click()
-        //cy.contains('Create Account').click()
+    })
+    describe('SIGN UP - POSITIVE ', () => {
+        it('verify user can sign up with all fields', () => {
+            cy.signUp(userData.userCompanyName,
+                userData.userFirstName,
+                userData.userLastName,
+                userData.newEmail,
+                Cypress.env('password'))
+            cy.contains(userData.confirmEmailMsg)
+        })
+    })
+
+    describe('SIGN UP - NEGATIVE', () => {
+        it.only("verify user can't sign up with empty fields", () => {
+            cy.get(`[type="submit"]`).should('be.visible').click()
+            cy.on('window:alert', (message) => {
+                expect(message).to.eq(userData.emptyFieldErr)
+                return true
+            })
+        })
+
+        it("verify user can't sign up with invalid email format ", () => {
+            cy.signUp(userData.userCompanyName,
+                userData.userFirstName,
+                userData.userLastName,
+                userData.invalidFormatEmail,
+                Cypress.env('password'))
+
+            cy.on('window:alert', (message) => {
+                expect(message).to.eq(userData.wrongEmailFormat)
+                return true
+            })
+        })
     })
 })
