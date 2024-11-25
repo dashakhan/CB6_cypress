@@ -13,5 +13,4 @@ export const userCompanyName=  'HowdyINC'
 export const authErrMsg = "Auth failed"
 export const emptyFieldErr = 'Please fill out this field.'
 export const wrongEmailFormat = "Please include '@' in the email address. 'InvalidEmail' is missing an '@'."
-
 export const confirmEmailMsg = "Confirm Email"

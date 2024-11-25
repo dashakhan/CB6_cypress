@@ -1,5 +1,4 @@
 import * as userData from "./data/userData.js"
-import {confirmEmailMsg} from "./data/userData.js";
 
 describe('SIGN UP', () => {
     beforeEach(() => {
@@ -25,7 +24,7 @@ describe('SIGN UP', () => {
             })
         })
 
-        it("verify user can't sign up with invalid email format ", () => {
+        it.only("verify user can't sign up with invalid email format ", () => {
             cy.signUp(userData.userCompanyName,
                 userData.userFirstName,
                 userData.userLastName,

@@ -1,0 +1,66 @@
+ {
+  "message": "Auth success",
+  "success": true,
+  "fail": false,
+  "silent": true,
+  "payload": {
+    "confirmEmailLink": "/user/verify/email/673921106169904b5d878a14/undefined",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imhvd2R5Y293c0BnbWFpbC5jb20iLCJ1c2VySWQiOiI2NzM5MjExMDYxNjk5MDRiNWQ4NzhhMTQiLCJpYXQiOjE3MzI0MDMwMzYsImV4cCI6MTczMzI2NzAzNn0.Wanf3cwaPVqyU5T-Gv2wmz4c302b5bUbGxWHEiZYxTs",
+    "user": {
+      "emailConfirmation": {
+        "confirmed": true
+      },
+      "resetPassword": {
+        "history": []
+      },
+      "lastLogin": {
+        "date": "2024-11-23T22:49:19.988Z"
+      },
+      "_id": "673921106169904b5d878a14",
+      "timeZone": "America/Los_Angeles",
+      "email": "howdycows@gmail.com",
+      "password": null,
+      "name": "Daria Khan",
+      "firstName": "Daria",
+      "lastName": "Khan",
+      "companyAccount": "673921106169904b5d878a15",
+      "isCompanyOwner": true,
+      "roles": [
+        "verified",
+        "companyOwner"
+      ],
+      "active": true,
+      "createdAt": "2024-11-16T22:47:44.403Z",
+      "updatedAt": "2024-11-23T22:49:19.989Z"
+    },
+    "acl": [
+      "user.auth",
+      "user.search",
+      "client.create.own",
+      "client.get.own",
+      "client.search.own",
+      "client.update.own",
+      "client.delete.own",
+      "order.create.own",
+      "order.get.own",
+      "order.search.own",
+      "order.update.own",
+      "order.delete.own",
+      "vendor.create.own",
+      "vendor.get.own",
+      "vendor.search.own",
+      "vendor.update.own",
+      "vendor.delete.own",
+      "service.create.own",
+      "service.get.own",
+      "service.search.own",
+      "service.update.own",
+      "service.delete.own",
+      "report.get.own",
+      "user.delete.any",
+      "user.update.any",
+      "companyAccount.update.own"
+    ],
+    "userId": "673921106169904b5d878a14"
+  }
+}

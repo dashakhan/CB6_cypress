@@ -11,7 +11,7 @@ describe('LOGIN PAGE', () => {
             cy.get(`[class="dropdown-toggle nav-link"]`).should('contain.text', userData.userFullName)
         })
     })
-    describe.only('LOGIN PAGE - NEGATIVE', () => {
+    describe('LOGIN PAGE - NEGATIVE', () => {
         it('should not login with empty fields', () => {
             cy.get(`[type="submit"]`).should('be.visible').click()
             cy.on('window:alert', (message)=>{
@@ -40,7 +40,7 @@ describe('LOGIN PAGE', () => {
             cy.loginViaUI(userData.invalidFormatEmail, Cypress.env('password'))
             cy.contains(userData.userFullName).should('not.exist')
             cy.on('window:alert', (message)=>{
-                expect(message).to.eq(userData.wrongEmailFormat)
+                expect(message).to.eq("rrrr")
                 return true
             })
         })
